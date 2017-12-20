@@ -1,0 +1,11 @@
+<view class="container">
+  <video id="myVideo" src="{{src}}" wx:if="{{src}}" controls bindplay="beginPlay" bindtimeupdate="playevent" danmu-list="{{danmuList}}" enable-danmu danmu-btn controls></video>
+  <view class="btn-area">
+    <button bindtap="rercordVideo">上传视频</button>
+    <input style='border:1px solid #000;margin-bottom:10px;height:30px;' bindblur="bindInputBlur" />
+    <button bindtap="bindSendDanmu">发送弹幕</button>
+  </view>
+
+  <!-- <button bindtap="uploadImg">上传图片</button>
+     <image style="width: 200px; height: 200px;"  src="{{imgSrc}}"></image> -->
+</view>

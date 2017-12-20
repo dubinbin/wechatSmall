@@ -1,0 +1,11 @@
+<!--index.wxml-->
+<view class="container">
+<!-- audio.wxml -->
+  <button type="primary" bindtap="beginRecord">开始录音</button>
+  <button type="primary" bindtap="stopRecord">停止录音</button>
+  <button type='primary'  bindtap='playRecord'>播放录音</button>
+  <button type='primary' bindtap='goToNewPage'>上传视频</button>
+</view>
+
+
+

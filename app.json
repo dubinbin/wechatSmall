@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/login/login",
+    "pages/test/test"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "iZuke",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "./common/index.png",
+        "selectedIconPath": "./common/index.png"
+      },
+      {
+        "pagePath": "pages/logs/logs",
+        "text": "关于",
+        "iconPath": "./common/about.png",
+        "selectedIconPath": "./common/about.png"
+      },
+      {
+        "pagePath": "pages/test/test",
+        "text": "测试",
+        "iconPath": "./common/test.png",
+        "selectedIconPath": "./common/test.png"
+      }
+    ]
+  }
+}

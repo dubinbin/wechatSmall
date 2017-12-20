@@ -1,0 +1,59 @@
+<!--index.wxml-->
+
+<view class="modal" wx-if='{{isModal}}' bindtap='closeModal'>
+
+</view>
+
+
+<view class="container">
+  <view class="flex-wrp" style="flex-direction:row;display:flex">
+    <form bindsubmit="bindFormSubmit">
+      <textarea placeholder="请输入打卡文字" name="textarea" class="daka" />
+
+
+      <view class="sendArea">
+        <view class="flex-item" catchtap="rercordAudio">
+          <image class="icon" src='../../common/语音.png'></image>
+          <text class="descriptext">语音</text>
+        </view>
+
+        <view class="flex-item" bindtap="uploadImg">
+          <image class="icon" src='../../common/图片.png'></image>
+          <text class="descriptext">图片</text>
+        </view>
+
+        <view class="flex-item" bindtap="rercordVideo">
+          <image class="icon" src='../../common/视频.png'></image>
+          <text class="descriptext">视频 </text>
+        </view>
+      </view>
+
+
+      <view class="showArea">
+        <view wx:for="{{audioArray}}" class='showAuido' bindtap='playAudio' data-url="{{audioArray[index].url}}"> 
+          这是第{{index}}条语音: {{audioArray[index].url}}
+        </view>
+
+
+  <video id="myVideo" src="{{src}}" wx:if="{{src}}" controls bindplay="beginPlay" bindtimeupdate="playevent"  controls></video>
+
+     <image style="width: 200px; height: 200px;"  wx-if="{{imgSrc}}" src="{{imgSrc}}"></image> 
+      </view>
+
+      <button type="primary" form-type="submit"> 打卡 </button>
+    </form>
+  </view>
+</view>
+
+<view class="audioRecordArea">
+  <view class="recordSecond" wx-if="{{isModal}}">
+    <view class="audioArea" wx-if="{{RecordStatus=='begin'}}">
+      <image class="beginRecord" bindtap="beginRecord" wx-if="{{RecordStatus=='begin'}}" src='../../common/录音.png'></image>
+    </view>
+
+    <view class="audioArea" wx-if="{{RecordStatus == 'end'}}">
+      <text class="secondCount">{{nowSecond}}/60s</text>
+      <image class="endRecord" bindtap="endRecord" wx-if="{{RecordStatus == 'end'}}" src='../../common/录音结束.png'></image>
+    </view>
+  </view>
+</view>
